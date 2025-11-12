@@ -70,6 +70,15 @@ docker run --detach --restart always --rm \
 --env-file .env_sample \
 --name hpe-oneview-exporter hpe-oneview-exporter:latest
 ```
+
+If that doesn't work, try:
+
+```
+docker run --detach --restart always \
+--publish 8080:8080 \
+--env-file .env_sample \
+--name hpe-oneview-exporter hpe-oneview-exporter:latest
+```
  5. Update your Prometheus configuration by adding the new target:
 
 ```
